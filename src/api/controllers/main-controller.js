@@ -12,7 +12,9 @@ class MainController extends BaseController {
    */
   async main() {
 
-    const response = 'Hello world!';
+    const response = {
+      message: 'Hello world!'
+    };
 
     this.res.json(response);
   }
