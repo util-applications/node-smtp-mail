@@ -1,5 +1,3 @@
-const main = require('../src/api/routes/main-routes');
-
 /**
  * @constant ROUTES
  * @type {{entryPoint: string, route: import('express').Router}[]}
@@ -21,8 +19,8 @@ const ROUTES = [
 
   {
     entryPoint: '/',
-    route: main
-  }
+    route: require('../src/api/routes/main-routes')
+  },
 
 ];
 
