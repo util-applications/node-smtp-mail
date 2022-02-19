@@ -6,6 +6,10 @@ class MainController extends BaseController {
     super(req, res, next);
   }
 
+  /**
+   * Controller main method
+   * @returns {Promise<void>}
+   */
   async main() {
 
     const response = 'Hello world!';
