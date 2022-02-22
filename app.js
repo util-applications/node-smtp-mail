@@ -1,11 +1,10 @@
 const server = require('./server/server');
+const startup = require('./server/startup');
 const env = require('./src/env/environment');
 
-// Application routes
-const ROUTES = require('./routes/routes');
-
-// Auto register application routes
-ROUTES.forEach(r => server.use(r.entryPoint, r.route));
+// Start and Auto register - Application routes
+startup.start();
+startup._routing.forEach(r => server.use(r.entryPoint, r.route));
 
 if (!env)
   throw new Error('Arquivo de variáveis de ambiente não encontrado - Buscando em /src/env/environment.js');
