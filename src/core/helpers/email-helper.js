@@ -55,17 +55,19 @@ class EmailHelper {
    * o argumento `templatePath` deverá ser: 
    * - `main/hello-world-template.html`
    * 
-   * @returns {void}
+   * @returns {EmailHelper}
    */
   useTemplate(templatePath) {
 
     const path = environment.email.templatesDirectory + '/' + templatePath;
 
-    if (!templateHelper.directoryExists(path))
-      throw new Error("Template path not found. Searching by " + path);
+    // if (!templateHelper.directoryExists(path))
+    //   throw new Error("Template path not found. Searching by " + path);
 
     // this._template = templatePath;
     this._template = path;
+
+    return this;
   }
 
   /**
@@ -73,10 +75,11 @@ class EmailHelper {
    * 
    * @param {{to: string|string[], subject: string}} config 
    * @param {*} data 
+   * @param {(err, response) => void} callback
    * 
    * @returns {void}
    */
-  send(config, data) {
+  send(config, data, callback) {
 
     // Teste receiver address with Regex
 
@@ -124,13 +127,16 @@ class EmailHelper {
       console.info('Enviando e-mail...');
 
       transporter.sendMail(mailOptions, function (error, response) {
-        if (error)
+
+        if (error) {
           console.error(error);
-        else
-          console.info(response.response);
+          return callback(error, null);
+        }
+
+        console.info(response.response);
+        return callback(null, response.response);
       });
       
-
     });
   }
 
