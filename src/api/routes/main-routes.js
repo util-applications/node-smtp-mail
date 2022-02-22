@@ -1,4 +1,4 @@
-const routeRegister = require('../helpers/route-register');
+const routeRegister = require('../../core/helpers/route-register');
 const c = require("../controllers/main-controller");
 
 /**
