@@ -40,6 +40,20 @@ class TemplateHelper {
       callback(null, data);
     });
   }
+
+  /**
+   * Compile the HTML template, applying the replacements variables
+   * @param {string} html Content of template - get by `readTemplate` method
+   * @param {*} replacements Variables to replace in HTML template
+   * 
+   * @returns {void}
+   */
+  compileTemplate(html, replacements) {
+
+    // Compile html and apply replacements with template enginer
+
+    return html;
+  }
 }
 
 module.exports = new TemplateHelper();
