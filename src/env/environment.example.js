@@ -18,4 +18,25 @@ module.exports = {
 
   /** Server port */
   port: 3000,
+
+  /** E-mail structure */
+  email: {
+
+    /** Location of e-mail templates (inside this project) */
+    templatesDirectory: '/templates',
+
+    /** SMTP settings */
+    smtp: {
+
+      host: 'smtp.mail.com', // Your e-mail provider host
+      port: 587, // Your e-mail provider port number
+      secure: false, // true for 465, false for other ports
+
+      /** SMTP Account config */
+      account: {
+        username: 'your_email@mail.com',
+        password: 'your_password'
+      }
+    }
+  }
 };
