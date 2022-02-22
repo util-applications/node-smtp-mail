@@ -3,7 +3,7 @@
  */
 const templates = {
 
-  helloWorld: "/main/hello-world.html",
+  helloWorld: "main/hello-world.html",
 
 }
 
