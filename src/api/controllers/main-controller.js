@@ -1,5 +1,10 @@
 const BaseController = require("../../core/base/base-controller");
 
+const env = require("../../env/environment");
+
+const emailTemplates = require("../../templates/templates");
+const emailHelper = require("../../core/helpers/email-helper");
+
 class MainController extends BaseController {
 
   constructor(req, res, next) {
@@ -13,10 +18,18 @@ class MainController extends BaseController {
   async main() {
 
     const response = {
-      message: 'Hello world!'
+      message: 'Hello World!'
     };
 
-    this.res.json(response);
+    const destinatario = this.req.body.email ?? env.email.smtp.account.username;
+
+    emailHelper.useTemplate(emailTemplates.helloWorld).send({
+      to: destinatario,
+      subject: response.message
+    }, response, (err, res) => {
+
+      this.res.json(response);
+    });
   }
 }
 
