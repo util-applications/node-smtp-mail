@@ -23,7 +23,10 @@ module.exports = {
   email: {
 
     /** Location of e-mail templates (inside this project) */
-    templatesDirectory: '/templates',
+    templatesDirectory: 'src/templates',
+
+    /** Sender name */
+    from: 'Hello World Bot',
 
     /** SMTP settings */
     smtp: {
