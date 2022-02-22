@@ -1,4 +1,4 @@
-const BaseController = require('../../base/controllers/base-controller');
+const BaseController = require("../../core/base/base-controller");
 
 class MainController extends BaseController {
 
