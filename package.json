@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/util-applications/node-smtp-mail#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemailer": "^6.7.2"
   }
 }
