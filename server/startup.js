@@ -8,7 +8,9 @@ const NodeSmtpMailStartup = require("../src/core/startup/node-smtp-mail-startup"
  */
 class Startup extends NodeSmtpMailStartup {
 
-  constructor() { }
+  constructor() {
+    super();
+  }
 
   /**
    * Método onde é possível registrar os entry points da aplicação com suas rotas customizadas
