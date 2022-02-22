@@ -1,7 +1,7 @@
 "use strict";
 const environment = require("../../env/environment");
 
-// const nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
 // const handlebars = require("handlebars");
 
 const templateHelper = require("./template-helper");
@@ -79,6 +79,59 @@ class EmailHelper {
   send(config, data) {
 
     // Teste receiver address with Regex
+
+    const emailEnv = environment.email;
+
+    // create reusable transporter object using the default SMTP transport
+    const transporter = nodemailer.createTransport({
+
+      host: emailEnv.smtp.host,
+      port: emailEnv.smtp.port,
+      secure: emailEnv.smtp.secure, 
+      tls: {
+        ciphers: "SSLv3",
+      },
+      auth: {
+        user: emailEnv.smtp.account.username,
+        pass: emailEnv.smtp.account.password,
+      },
+    });
+
+    console.info('Lendo template selecionado:', this._template, '...');
+
+    // send mail with defined transport object
+    templateHelper.readTemplate(this._template, (error, html) => {
+
+      const replacements = {
+        ...data,
+        appName: environment.applicationName,
+      };
+
+      console.info('Compilando template...', 'Substituindo variáveis...');
+      
+      const template = templateHelper.compileTemplate(html, replacements);
+
+      const mailOptions = {
+        from: this._from ?? environment.email.from, 
+        to: config.to, 
+        subject: config.subject, 
+        html: template
+      };
+
+      console.info('Destinatário:', mailOptions.to);
+      console.info('Assunto:', mailOptions.subject);
+
+      console.info('Enviando e-mail...');
+
+      transporter.sendMail(mailOptions, function (error, response) {
+        if (error)
+          console.error(error);
+        else
+          console.info(response.response);
+      });
+      
+
+    });
   }
 
 }
