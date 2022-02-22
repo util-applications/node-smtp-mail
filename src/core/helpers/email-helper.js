@@ -38,13 +38,15 @@ class EmailHelper {
    * 
    * ### Observação importante: 
    * O argumento `templatePath` será pesquisado a partir da variável de ambiente `templatesDirectory`, 
-   * definida no `environment` da aplicação
+   * definida no `environment` da aplicação, na chave `email` (`environment.email.templatesDirectory`)
    * 
    * @example
    * Considerando:
    * ```js
    * const environment = {
-   *  templatesDirectory: '/templates'
+   *  email: {
+   *    templatesDirectory: '/templates'
+   *  }
    * }
    * ```
    * Caso o template desejado esteja localizado em:
@@ -57,7 +59,7 @@ class EmailHelper {
    */
   useTemplate(templatePath) {
 
-    const path = environment.templatesDirectory + '/' + templatePath;
+    const path = environment.email.templatesDirectory + '/' + templatePath;
 
     if (!templateHelper.directoryExists(path))
       throw new Error("Template path not found. Searching by " + path);
