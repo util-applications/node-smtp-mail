@@ -6,15 +6,6 @@ const nodemailer = require("nodemailer");
 
 const templateHelper = require("./template-helper");
 
-const transporterConfig = {
-  host: null,
-  port: null,
-  secure: false, // true for 465, false for other ports
-  tls: {
-    ciphers: "SSLv3",
-  },
-};
-
 class EmailHelper {
 
   constructor() { }
@@ -79,7 +70,7 @@ class EmailHelper {
    * 
    * @returns {void}
    */
-  send(config, data, callback) {
+  async send(config, data, callback) {
 
     // Teste receiver address with Regex
 
