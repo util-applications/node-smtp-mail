@@ -1,4 +1,4 @@
-const BaseController = require("../../core/base/base-controller");
+const BaseController = require("../../core/base/controller/base-controller");
 
 const MainRepository = require("../repositories/main-repository");
 
