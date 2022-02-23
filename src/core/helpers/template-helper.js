@@ -1,10 +1,15 @@
 const fs = require("fs");
+const env = require("../../env/environment");
+
+const TemplateEngineFactory = require("../base/template-engine/template-engine-factory").TemplateEngineFactory;
 
 class TemplateHelper {
 
   constructor() {
     // Starts file encoding
     this._encoding = "utf-8";
+    // Starts template engine
+    this._templateEngine = env.template.engine;
   }
 
   /**
@@ -22,6 +27,14 @@ class TemplateHelper {
    */
   updateEncoding(encoding) {
     this._encoding = encoding;
+  }
+
+  /**
+   * Update Template Engine - Default Template Engine is defined in `template` key, at `environment`
+   * @param {"handlebars"|"ejs"} templateEngine 
+   */
+  updateTemplateEngine(templateEngine) {
+    this._templateEngine = templateEngine;
   }
 
   /**
@@ -46,13 +59,15 @@ class TemplateHelper {
    * @param {string} html Content of template - get by `readTemplate` method
    * @param {*} replacements Variables to replace in HTML template
    * 
-   * @returns {void}
+   * @returns {Promise<string>}
    */
-  compileTemplate(html, replacements) {
+  async compileTemplate(html, replacements) {
 
+    // Template Engine Factory - obtém instância de helper com base no template engine configurado
+    const templateEngineHelper = (new TemplateEngineFactory(this._templateEngine)).getHelper();
+    
     // Compile html and apply replacements with template enginer
-
-    return html;
+    return await templateEngineHelper.compile(html, replacements);
   }
 }
 
