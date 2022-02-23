@@ -119,6 +119,8 @@ class EmailHelper {
 
       transporter.sendMail(mailOptions, function (error, response) {
 
+        console.log('E-mail enviado!');
+
         if (error) {
           console.error(error);
           return callback(error, null);
