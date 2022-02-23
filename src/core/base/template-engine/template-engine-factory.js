@@ -42,9 +42,9 @@ class TemplateEngineBaseHelper {
    * @param {string} html Conteúdo HTML do template que deve ser compilado e aplicado variáveis
    * @param {*} replacements Conteúdo que deverá ser substituído no template
    * 
-   * @returns {string} Template compilado com as variáveis aplicadas
+   * @returns {Promise<string>} Template compilado com as variáveis aplicadas
    */
-  compile(html, replacements);
+  async compile(html, replacements);
 }
 
 module.exports = {TEMPLATE_ENGINE, TemplateEngineFactory, TemplateEngineBaseHelper};
