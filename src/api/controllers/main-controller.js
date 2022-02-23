@@ -1,14 +1,18 @@
 const BaseController = require("../../core/base/base-controller");
 
-const env = require("../../env/environment");
+const MainRepository = require("../repositories/main-repository");
 
 const emailTemplates = require("../../templates/templates");
 const emailHelper = require("../../core/helpers/email-helper");
 
 class MainController extends BaseController {
 
-  constructor(req, res, next) {
+  /**
+   * @param {MainRepository} repository 
+   */
+  constructor(req, res, next, repository) {
     super(req, res, next);
+    this._repository = repository;
   }
 
   /**
@@ -17,20 +21,23 @@ class MainController extends BaseController {
    */
   async main() {
 
+    const destinatario = await this._repository.obterDestinatario(this.req);
+
     const response = {
-      message: 'Hello World!'
+      message: await this._repository.obterResponseMessage()
     };
 
-    const destinatario = this.req.body.email ?? env.email.smtp.account.username;
+    response.message = response.message + " enviado para " + destinatario;
 
+    // Definindo template a ser utilizado e enviando e-mail
     emailHelper.useTemplate(emailTemplates.helloWorld).send({
       to: destinatario,
       subject: response.message
     }, response, (err, res) => {
 
-      this.res.json(response);
+      return this.res.json(response);
     });
   }
 }
 
-module.exports = (req, res, next) => new MainController(req, res, next);
+module.exports = (req, res, next) => new MainController(req, res, next, new MainRepository());
