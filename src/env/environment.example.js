@@ -19,11 +19,18 @@ module.exports = {
   /** Server port */
   port: 3000,
 
-  /** E-mail structure */
-  email: {
+  template: {
 
     /** Location of e-mail templates (inside this project) */
-    templatesDirectory: 'src/templates',
+    directory: 'src/templates',
+
+    /** It's used this template engine for compile the application email templates */
+    engine: 'handlebars'
+
+  },
+
+  /** E-mail structure */
+  email: {
 
     /** Sender name */
     from: 'Hello World Bot',
