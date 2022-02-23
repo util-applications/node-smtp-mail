@@ -7,6 +7,6 @@ const c = require("../controllers/main-controller");
 const router = routeRegister("../controllers/main-controller");
 
 // Rotas
-router.get('/', (req, res, next) => c(req, res, next).main());
+router.post('/', (req, res, next) => c(req, res, next).main());
 
 module.exports = router;
