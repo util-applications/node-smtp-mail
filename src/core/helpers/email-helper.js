@@ -103,7 +103,7 @@ class EmailHelper {
 
       console.info('Compilando template...', 'Substituindo variáveis...');
       
-      const template = templateHelper.compileTemplate(html, replacements);
+      const template = await templateHelper.compileTemplate(html, replacements);
 
       const mailOptions = {
         from: this._from ?? environment.email.from, 
