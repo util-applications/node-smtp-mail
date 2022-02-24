@@ -1,9 +1,5 @@
-const HandlebarsHelper = require("./handlebars/handlebars-helper");
-
-/** Enumeração dos template engines suportados */
-const TEMPLATE_ENGINE = {
-  Handlebars: "handlebars"
-};
+const HandlebarsHelper = require("./helpers/handlebars/handlebars-helper");
+const TEMPLATE_ENGINE = require("./available-template-engines");
 
 /**
  * @class
@@ -19,7 +15,7 @@ class TemplateEngineFactory {
 
   /**
    * Obtém uma instância de Template Engine com base no template configurado neste Factory
-   * @returns {TemplateEngineBaseHelper}
+   * @returns {import('./helpers/template-engine-base-helper')}
    */
   getHelper() {
 
@@ -33,18 +29,4 @@ class TemplateEngineFactory {
   }
 }
 
-/** @class Classe base - Classe concreta do helper extends a esta classe base */
-class TemplateEngineBaseHelper {
-
-  /** 
-   * Assinatura do método compile - Deve ser implementado por todo helper de template engine concreto
-   * 
-   * @param {string} html Conteúdo HTML do template que deve ser compilado e aplicado variáveis
-   * @param {*} replacements Conteúdo que deverá ser substituído no template
-   * 
-   * @returns {Promise<string>} Template compilado com as variáveis aplicadas
-   */
-  async compile(html, replacements);
-}
-
-module.exports = {TEMPLATE_ENGINE, TemplateEngineFactory, TemplateEngineBaseHelper};
+module.exports = TemplateEngineFactory;
