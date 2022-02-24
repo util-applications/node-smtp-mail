@@ -20,7 +20,7 @@ class MainRepository {
    */
   async obterResponseMessage() {
 
-    return "Hello world";
+    return "Hello world! Sucesso!";
   }
   
 }

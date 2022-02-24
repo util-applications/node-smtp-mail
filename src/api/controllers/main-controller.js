@@ -27,13 +27,20 @@ class MainController extends BaseController {
       message: await this._repository.obterResponseMessage()
     };
 
-    response.message = response.message + " enviado para " + destinatario;
+    const data = {
+      user: {
+        name: this.req.body.name,
+        email: destinatario,
+      }
+    };
+
+    const subject = "Hello World, " + data.user.name;
 
     // Definindo template a ser utilizado e enviando e-mail
     emailHelper.useTemplate(emailTemplates.helloWorld).send({
       to: destinatario,
-      subject: response.message
-    }, response, (err, res) => {
+      subject: subject
+    }, data, (err, res) => {
 
       return this.res.json(response);
     });
