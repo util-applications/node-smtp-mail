@@ -1,11 +1,11 @@
 // const handlebars = require("handlebars");
 
-const TemplateEngineBaseHelper = require("../template-engine-factory").TemplateEngineBaseHelper;
+const TemplateEngineBaseHelper = require("../template-engine-base-helper");
 
 class HandlebarsHelper extends TemplateEngineBaseHelper {
 
   constructor() {
-    super();
+    // super();
   }
 
   async compile(html, replacements) {
