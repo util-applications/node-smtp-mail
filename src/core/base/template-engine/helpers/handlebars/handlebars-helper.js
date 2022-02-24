@@ -1,4 +1,4 @@
-// const handlebars = require("handlebars");
+const handlebars = require("handlebars");
 
 const TemplateEngineBaseHelper = require("../template-engine-base-helper");
 
@@ -10,7 +10,9 @@ class HandlebarsHelper extends TemplateEngineBaseHelper {
 
   async compile(html, replacements) {
 
-    return html;
+    const template = handlebars.compile(html);
+
+    return template(replacements);
   }
 }
 
