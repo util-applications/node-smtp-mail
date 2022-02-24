@@ -94,7 +94,7 @@ class EmailHelper {
     console.info('Lendo template selecionado:', this._template, '...');
 
     // send mail with defined transport object
-    templateHelper.readTemplate(this._template, (error, html) => {
+    templateHelper.readTemplate(this._template, async (error, html) => {
 
       const replacements = {
         ...data,

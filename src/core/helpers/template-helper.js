@@ -1,7 +1,7 @@
 const fs = require("fs");
 const env = require("../../env/environment");
 
-const TemplateEngineFactory = require("../base/template-engine/template-engine-factory").TemplateEngineFactory;
+const TemplateEngineFactory = require("../base/template-engine/template-engine-factory");
 
 class TemplateHelper {
 
