@@ -11,10 +11,26 @@
 .anchor-ref {
   text-decoration: none;
   color: yellow;
-  margin: 0 5px;
+  margin-right: 10px;
+  font-weight: 100;
+  opacity: 0.5;
+}
+.anchor-ref:hover {
+  opacity: 1;
 }
 
 .instalacao-badge {
   background: #ccc;
   color: #000;
+}
+
+.star-me {
+  border-width: 3px;
+  border-style: dotted;
+  border-color: #fff;
+  border-radius: 7.5px;
+
+  text-align: center;
+
+  padding: 10px 10px;
 }
