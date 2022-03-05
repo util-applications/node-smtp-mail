@@ -77,3 +77,13 @@ code {
   padding: 15px 25px;
   border-radius: 5px;
 }
+.anchor-ref {
+  text-decoration: none;
+  color: yellow;
+  margin-right: 10px;
+  font-weight: 100;
+  opacity: 0.5;
+}
+.anchor-ref:hover {
+  opacity: 1;
+}
