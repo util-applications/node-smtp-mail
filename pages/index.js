@@ -3,6 +3,10 @@
  */
 for (let section of document.getElementsByTagName("h2")) {
 
+  if (section.getAttribute("anchor") === "false") {
+    continue;
+  }
+
   const anchor = section.parentElement.id;
 
   const anchorRef = document.createElement("a");
