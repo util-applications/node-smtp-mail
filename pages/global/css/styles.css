@@ -1,0 +1,46 @@
+html, body {
+  background: #3e3e3e;
+  color: #fff;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+  transition: ease-in-out 0.15s;
+}
+
+header#main-header {
+  padding: 0 20px;
+  background: #000;
+}
+
+header#main-header ul {
+  list-style: none;
+}
+
+header#main-header ul li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+header#main-header ul li.active {
+  background: blue;
+}
+
+header#main-header ul li:hover {
+  /* filter: brightness(1.25); */
+  background: #ccc;
+}
+
+header#main-header ul li a {
+  display: block;
+  padding: 20px 20px;
+
+  text-decoration: none;
+  color: #fff;
+}
