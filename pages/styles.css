@@ -1,0 +1,20 @@
+.ideia {
+  width: 100%;
+
+  color: #000;
+  background: #ccc;
+
+  border-left: solid 10px #000;
+  padding: 10px 15px;
+}
+
+.anchor-ref {
+  text-decoration: none;
+  color: yellow;
+  margin: 0 5px;
+}
+
+.instalacao-badge {
+  background: #ccc;
+  color: #000;
+}
