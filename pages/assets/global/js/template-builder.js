@@ -1,3 +1,5 @@
+import { aside } from './template/header.js';
+
 /** 
  * Cria a estrutura de header padrão da página
  * 
@@ -39,6 +41,7 @@ export function buildMainHeader(headerElement) {
         ul.appendChild(li);
       }
       
+      headerElement.appendChild(aside);
       headerElement.appendChild(ul);
 
     });
