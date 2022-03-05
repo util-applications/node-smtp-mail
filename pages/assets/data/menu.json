@@ -6,7 +6,12 @@
   },
   {
     "label": "Getting Started",
-    "link": "/pages/getting-started/index.html",
+    "link": "/pages/getting-started/",
+    "available": true
+  },
+  {
+    "label": "Environment",
+    "link": "/pages/environment/",
     "available": true
   }
 ]
