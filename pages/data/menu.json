@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Início",
+    "link": "/pages/index.html",
+    "available": true
+  },
+  {
+    "label": "Getting Started",
+    "link": "/pages/getting-started/index.html",
+    "available": true
+  }
+]
