@@ -1,52 +1,75 @@
+/* Root Config */
 html, body {
-  background: #3e3e3e;
-  color: #fff;
-
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
+  /* Variables */
+  --accent: blue;
+  --template-bg-color: #3e3e3e;
+  --template-text-color: #fff;
 }
-
 body {
   padding: 0;
   margin: 0;
+  background: var(--template-bg-color);
+  color: var(--template-text-color);
 }
-
 body * {
   box-sizing: border-box;
   transition: ease-in-out 0.15s;
+  line-height: 27.5px;
 }
 
+/* Template config */
 main {
+  width: 1000px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
   padding: 15px;
 }
+a {
+  color: var(--template-text-color);
+}
 
+/* Common Classes */
+.full-width { width: 100%; }
+.accent-bg { background: var(--accent); }
+.accent-text { color: var(--accent); }
+.mono { font-family: monospace; }
+.badge { padding: 2.5px 3.5px; border-radius: 3.5px; }
+
+/* Dinamic template (header mainly) */
 header#main-header {
-  padding: 0 20px;
   background: #000;
 }
-
 header#main-header ul {
   list-style: none;
-  margin: 0;
+  margin: 0 20px;
 }
-
 header#main-header ul li {
   display: inline-block;
   text-transform: uppercase;
 }
 header#main-header ul li.active {
-  background: blue;
+  background: var(--accent);
 }
-
 header#main-header ul li:hover {
-  /* filter: brightness(1.25); */
   background: #ccc;
 }
-
 header#main-header ul li a {
   display: block;
   padding: 20px 20px;
-
   text-decoration: none;
   color: #fff;
+}
+
+/* Common Tags Style */
+code {
+  display: block;
+  background: #ccc;
+  color: #000;
+  padding: 15px 25px;
+  border-radius: 5px;
 }
