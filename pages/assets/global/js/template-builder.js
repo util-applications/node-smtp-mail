@@ -1,4 +1,5 @@
-import { aside } from './template/header.js';
+import { aside, isActivePage } from './template/header.js';
+import { criaAncora } from './template/anchor.js';
 
 /** 
  * Cria a estrutura de header padrão da página
@@ -7,8 +8,10 @@ import { aside } from './template/header.js';
  */
 export function buildMainHeader(headerElement) {
 
-  // Obter listagem de menus a serem exibidos
+  if (!headerElement)
+    throw new Error("Elemento <header> não encontrado. Crie um header com o id 'main-header'");
 
+  // Obter listagem de menus a serem exibidos - Definidos em arquivo local
   fetch("/pages/assets/data/menu.json")
     .then(res => res.json())
     .then(res => {
@@ -43,10 +46,15 @@ export function buildMainHeader(headerElement) {
       
       headerElement.appendChild(aside);
       headerElement.appendChild(ul);
-
     });
 
 }
 
-
-const isActivePage = (url) => window.location.href.indexOf(url) !== -1;
+/** 
+ * Cria a estrutura de âncoras para sub-titulos de cada página
+ * 
+ * @param {HTMLElement[]} headers
+ */
+export function buildAnchors(headers) {
+  criaAncora(headers);
+}
