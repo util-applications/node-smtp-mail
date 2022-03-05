@@ -7,7 +7,7 @@ export function buildMainHeader(headerElement) {
 
   // Obter listagem de menus a serem exibidos
 
-  fetch("/pages/data/menu.json")
+  fetch("/pages/assets/data/menu.json")
     .then(res => res.json())
     .then(res => {
 
