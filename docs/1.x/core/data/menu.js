@@ -5,7 +5,7 @@
 export const menu = [
   {
     label: "Início",
-    link: "/node-smtp-mail/docs/1.x/index.html",
+    link: "/node-smtp-mail/docs/1.x/inicio.html",
     available: true
   },
   {
