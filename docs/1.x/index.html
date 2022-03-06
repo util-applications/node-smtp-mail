@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node SMTP Mail</title>
+  <!-- GLOBAL CSS -->
+  <link rel="stylesheet" href="/docs/1.x/core/css/styles.css">
+  <!-- LOCAL PAGE CSS -->
+  <link rel="stylesheet" href="/docs/1.x/assets/css/index.css">
+</head>
+<body>
+
+  <!-- HEADER - Criado dinamicamente -->
+  <header id="main-header"></header>
+
+  <!-- CONTENT -->
+  <main>
+
+    <article>
+
+      <header id="introducao">
+        <h2>Introdução</h2>
+        <p>
+          A ideia deste projeto é ser um recurso rápido para envio de e-mail de maneira sistemática, a ser utilizado em pequenos projetos, 
+          <strong>não recomendado para ser utilizado em ambiente de produção.</strong>.
+        </p>
+        <p>
+          Para ambiente de produção, recomenda-se a utilização de algum serviço de mensagens mais seguro e completo.
+        </p>
+      </header>
+
+      <section id="instalacao">
+
+        <h2>Instalação do sistema</h2>
+
+        <p>
+          Para iniciar, realize um 
+          <span class="mono badge instalacao-badge">fork</span> 
+          deste projeto para sua conta, e, em seguida,
+          realize o 
+          <span class="mono badge instalacao-badge">clone</span> 
+          do repositório que foi criado em sua conta:
+        </p>
+        <code>
+          https://github.com/&#60;seu-nome-de-usuario&#62;/node-smtp-mail.git
+        </code>
+        <p>
+          ou via SSH (caso seja necessário):
+        </p>
+        <code>
+          git@github.com:&#60;seu-nome-de-usuario&#62;/node-smtp-mail.git
+        </code>
+        <p>Com isso, você terá o projeto em sua máquina.</p>
+        <p>
+          Antes de iniciar qualquer coisa no projeto, é importante instalar as dependências necessárias para o
+          funcionamento do projeto. Para isso, utilize o gerenciador de pacotes 
+          <span class="mono badge instalacao-badge">npm</span>.
+          O comando para instalar as dependências é:
+        </p>
+        <code>
+          npm install
+        </code>
+        <p>
+          Com estas etapas concluídas, basta concluir os passos descritos na seção de
+          <a href="#setup-inicial">Setup inicial</a> para começar a utilizar o serviço.
+        </p>
+
+      </section>
+
+      <section id="setup-inicial">
+
+        <h2>Setup inicial</h2>
+        <p>
+          A etapa de configuração inicial deste serviço consiste em, basicamente, definir corretamente
+          os arquivos e variáveis de ambiente padrão para que o projeto seja executado.
+        </p>
+        <p>
+          Com isso, o arquivo que necessita de alteração é o 
+          <span class="mono badge instalacao-badge">environment.js</span>,
+          localizado dentro do projeto, no caminho
+          <span class="mono badge instalacao-badge">/src/env</span>.
+        </p>
+        <p>
+          Inicialmente, você encontrará somente o arquivo de exemplo (
+            <span class="mono badge instalacao-badge">environment.example.js</span>
+          ).
+          O arquivo definitivo de variáveis de ambiente será configurado logo abaixo.
+          Para isso, siga os seguintes passos:
+        </p>
+
+        <ol>
+          <li>
+            No mesmo caminho do arquivo de exemplo (
+              <span class="mono badge instalacao-badge">/src/env</span>
+            ), crie um novo arquivo com o nome 
+            <span class="mono badge instalacao-badge">environment.js</span>.
+          </li>
+          <li>
+            Copie o conteúdo do arquivo de exemplo e cole no novo arquivo que você criou.
+          </li>
+        </ol>
+
+        <p>
+          Para entender o que cada variável significa, você pode 
+          <a href="/pages/environment/">ler mais sobre environment</a>. 
+          Dessa forma, você poderá definir os valores corretos de acordo com a sua necessidade.
+        </p>
+
+      </section>
+
+      <section>
+
+        <h2 anchor="false">Conclusão</h2>
+        <p>
+          Após ter concluído todas as etapas iniciais apresentadas nesta página, 
+          você está pronto para:
+        </p>
+        <ul>
+          <li>
+            Desenvolver seus próprios template de e-mail, com as variáveis que desejar.
+          </li>
+          <li>
+            Configurar uma API para receber requisições e enviar e-mail.
+          </li>
+          <li>
+            Remover toda a lógica complexa de envio de e-mail da sua aplicação principal, 
+            onde a regra de negócio deve estar clara e simples.
+          </li>
+        </ul>
+        <p>
+          E, para finalizar,
+        </p>
+        <div class="star-me">
+          &#11088;
+          não esqueça de deixar sua estrela (&#11088;) no 
+          <a href="https://github.com/util-applications/node-smtp-mail" target="_blank">repositório</a>, 
+          para contribuir com o projeto.
+          &#11088;
+        </div>
+        <p>
+          O link para o projeto está no rodapé desta página.
+        </p>
+        <p>
+          <h3>Muito Obrigado!</h3>
+        </p>
+
+      </section>
+
+      <footer>
+
+      </footer>
+
+    </article>
+
+  </main>
+  <!-- / CONTENT -->
+
+  <!-- FOOTER - Criado dinamicamente -->
+  <footer id="main-footer"></footer>
+
+<!-- GLOBAL SCRIPT -->
+<script type="module" src="/docs/1.x/core/js/main.js"></script>
+<!-- LOCAL PAGE SCRIPT -->
+<script src="/docs/1.x/assets/js/index.js"></script>
+
+</body>
+</html>
