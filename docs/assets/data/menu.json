@@ -1,17 +1,17 @@
 [
   {
     "label": "Início",
-    "link": "/pages/index.html",
+    "link": "/docs/index.html",
     "available": true
   },
   {
     "label": "Getting Started",
-    "link": "/pages/getting-started/",
+    "link": "/docs/getting-started/",
     "available": true
   },
   {
     "label": "Environment",
-    "link": "/pages/environment/",
+    "link": "/docs/environment/",
     "available": true
   }
 ]

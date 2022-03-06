@@ -12,7 +12,8 @@ export function buildMainHeader(headerElement) {
     throw new Error("Elemento <header> não encontrado. Crie um header com o id 'main-header'");
 
   // Obter listagem de menus a serem exibidos - Definidos em arquivo local
-  fetch("/pages/assets/data/menu.json")
+  const menusPath = "/docs/assets/data/menu.json";
+  fetch(menusPath)
     .then(res => res.json())
     .then(res => {
 
