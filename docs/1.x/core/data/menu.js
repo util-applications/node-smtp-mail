@@ -5,17 +5,17 @@
 export const menu = [
   {
     label: "Início",
-    link: "/1.x/index.html",
+    link: "/node-smtp-mail/docs/1.x/index.html",
     available: true
   },
   {
     label: "Getting Started",
-    link: "/1.x/getting-started.html",
+    link: "/node-smtp-mail/docs/1.x/getting-started.html",
     available: true
   },
   {
     label: "Environment",
-    link: "/1.x/environment.html",
+    link: "/node-smtp-mail/docs/1.x/environment.html",
     available: true
   }
 ];
